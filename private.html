@@ -3,77 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Share Your Feedback | DekoReylan Painting and Decorating</title>
-<meta name="description" content="Tell us where we can do better — private feedback for DekoReylan Painting and Decorating.">
-<meta name="theme-color" content="#211c18">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23bf5b3c'/%3E%3Ctext x='50' y='70' font-family='Georgia,serif' font-size='58' font-weight='600' fill='white' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
+<meta name="robots" content="noindex, nofollow">
+<title>Client Area | DekoReylan Painting and Decorating</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23221d18'/%3E%3Ctext x='50' y='70' font-family='Georgia,serif' font-size='58' fill='%23b85c38' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
 </head>
 <body>
-<div class="feedback-wrap">
-  <div class="feedback-card">
-    <div id="form-state">
-      <div class="mark">D</div>
-      <h1>Tell us more</h1>
-      <p>We're sorry we didn't quite hit the mark. Let us know what happened and we'll put it right — this goes straight to the team, privately.</p>
-      <form id="fb-form" action="https://formsubmit.co/hello@dekoreylan.co.nz" method="POST">
-        <input type="hidden" name="_subject" value="Private feedback — DekoReylan website">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="https://dekoreylan-painting-and-decorating-demo.vercel.app/private.html?sent=1">
-        <div class="field">
-          <label for="name">Name</label>
-          <input id="name" type="text" name="name" placeholder="Your name" required>
-        </div>
-        <div class="field">
-          <label for="email">Email</label>
-          <input id="email" type="email" name="email" placeholder="you@email.co.nz" required>
-        </div>
-        <div class="field">
-          <label for="rating">Your rating</label>
-          <input id="rating" type="text" name="rating" readonly>
-        </div>
-        <div class="field">
-          <label for="feedback">What could we have done better?</label>
-          <textarea id="feedback" name="feedback" placeholder="Tell us what happened…" required></textarea>
-        </div>
-        <button type="submit" class="btn btn--accent btn--block">Send Feedback</button>
-      </form>
-      <p style="margin-top:22px;text-align:center"><a href="index.html" class="back-link">← Back to site</a></p>
-    </div>
-
-    <div class="success-state" id="success">
-      <div class="check"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div>
-      <h2>Thanks for the feedback</h2>
-      <p>We appreciate you taking the time. The team will be in touch if needed.</p>
-      <p style="margin-top:26px"><a href="index.html" class="btn btn--dark">Back to Home</a></p>
-    </div>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">D</span>
+      <span><span class="brand-name">DekoReylan</span><br><span class="brand-sub">Painting &amp; Decorating</span></span>
+    </a>
+    <div class="nav-cta"><a class="btn btn-primary" href="index.html">Back to site</a></div>
   </div>
+</header>
+
+<div class="subpage">
+  <a class="back" href="index.html">← Back to home</a>
+  <span class="badge">Private</span>
+  <h1>Client &amp; quote area</h1>
+  <p class="meta">For existing DekoReylan customers</p>
+  <p>This is a private area for current clients to track an active job — approved quotes, colour selections, scheduled dates and progress photos in one place.</p>
+  <h2>What lives here</h2>
+  <ul>
+    <li>Your approved quote and scope of work</li>
+    <li>Agreed colours, paint brands and finishes</li>
+    <li>Scheduled start and completion dates</li>
+    <li>Before / after photos as the job progresses</li>
+    <li>Your invoice and workmanship details</li>
+  </ul>
+  <h2>Need access?</h2>
+  <p>If you're a current customer and need a link to your job, call <a href="tel:+64221900106" style="color:var(--clay);font-weight:700;">022 190 0106</a> and we'll send it through.</p>
+  <p style="margin-top:24px;font-size:0.9rem;">This page is a placeholder included with the demo to show how a client portal could work — it isn't live yet.</p>
 </div>
 
-<script>
-(function(){
-  var params = new URLSearchParams(window.location.search);
-  var rating = params.get('rating');
-  var ratingField = document.getElementById('rating');
-  if(ratingField){
-    var r = parseInt(rating,10);
-    if(r>=1 && r<=5){
-      ratingField.value = r + " / 5  " + "★".repeat(r);
-    } else {
-      ratingField.value = "Not rated";
-    }
-  }
-  if(params.get('sent')==='1'){
-    var fs = document.getElementById('form-state');
-    var su = document.getElementById('success');
-    if(fs) fs.style.display='none';
-    if(su) su.classList.add('show');
-  }
-})();
-</script>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-bottom" style="border:0;">
+      <span>© <span id="yr">2026</span> DekoReylan Painting and Decorating · Christchurch</span>
+      <span><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a></span>
+    </div>
+  </div>
+</footer>
+<script src="main.js"></script>
 </body>
 </html>
